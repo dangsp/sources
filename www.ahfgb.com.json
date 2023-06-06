@@ -1,0 +1,38 @@
+{
+  "name": "笔趣鸽",
+  "url": "www.ahfgb.com",
+  "version": "1.0.0",
+  "search": {
+    "url": "https:hfgb.com/search.php?keyword=${key}",
+    "charset": "utf-8",
+    "list": "div.result-list > div.result-item",
+    "name": "h3",
+    "detail": "h3 > a"
+  },
+  "detail": {
+    "name": "div#info > h1",
+    "author": "div#info > p:nth-child(1)",
+    "status": "div#info > p:nth-child(2)",
+    "lastChapter": "div#info > p:nth-child(4)",
+    "cover": "div#fmimg > img",
+    "intro": "div#intro > p:nth-child(1)",
+    "catalog": "div#list > dl > dd"
+  },
+  "catalog": {
+    "list": "div#list > dl > dt",
+    "orderBy": 0,
+    "booklet": {
+      "name": "#list@match->(?<=》)(.+)(?=正)",
+      "list": "div#list > dl > dd"
+    },
+    "name": "a",
+    "chapter": "a"
+  },
+  "chapter": {
+    "content": "div#content",
+    "purify": [
+      "https:hfgb.com"
+    ],
+    "page": "div#bottem2 > a:nth-child(4)"
+  }
+}
